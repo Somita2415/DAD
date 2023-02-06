@@ -1,1 +1,24 @@
 
+def msfvenomWrapper():
+    # Get payload type
+    payload_type = input("Please specify payload type (e.g. windows/meterpreter/bind_tcp): ")
+
+    # Get target system
+    target_system = input("Please specify target system (e.g. Windows, Linux): ")
+
+    # Get target architecture
+    target_arch = input("Please specify target architecture (e.g. x86, x64): ")
+
+    # Get target IP
+    target_ip = input("Please specify target IP: ")
+
+    # Get target port
+    target_port = input("Please specify target port: ")
+
+    # Generate payload
+    generated_payload = f'msfvenom -p {payload_type} -a {target_arch} -o {target_system} LHOST={target_ip} LPORT={target_port}'
+
+    # Output payload
+    print(generated_payload)
+
+msfvenomWrapper()
