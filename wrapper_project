@@ -1,4 +1,4 @@
-I DONT THINK THIS IS THE RIGHT ONE 
+I DONT THINK THIS IS THE RIGHT ONE -----> THE SECOND ONE IS A BETTER ONE ...STARTS AT LINE 28
 def msfvenomWrapper():
     # Get payload type
     payload_type = input("Please specify payload type (e.g. windows/meterpreter/bind_tcp): ")
@@ -22,7 +22,8 @@ def msfvenomWrapper():
     print(generated_payload)
 
 msfvenomWrapper()
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 THIS SHOULD BE A BETTER ONE
 #!/usr/bin/python
