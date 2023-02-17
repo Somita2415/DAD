@@ -238,11 +238,8 @@ filename = input("Please enter the name you want for the file: ")
 print(Fore.CYAN)
 
 attackerIP = input("Please enter your IP address: " + "\n")
-
 attackerPort = input("Enter a port number (1 - 65,535): " +"\n")
-
 meterpreter = input("Would you like to use meterpreter? (y/n): " + "\n")
-
 stageless = input("Do you want the payload to be stageless? (y/n): " + "\n")
 
 # Enumerate target
