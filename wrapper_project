@@ -219,7 +219,7 @@ print("[*] Exported payload successfully.")
 ======================================================================================================================================================================
 
 #!/usr/bin/python
-
+#importing the os and subprocess module allows us to not only create new files but to also start new applications within the python scritp.
 import os
 import subprocess
 
