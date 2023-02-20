@@ -233,7 +233,7 @@ print(Fore.WHITE)
 
 filename = input("Please enter the name you want for the file: ")
 
-# Get info from user
+# Here we are entering the Attack IP, Attack Port, whether or not we want to use meterpreter as well as if we want the payload to be staged or stageless.
 
 print(Fore.CYAN)
 
@@ -245,7 +245,7 @@ stageless = input("Do you want the payload to be stageless? (y/n): " + "\n")
 # Enumerate target
 
 print(Fore.RED)
-
+#here we are adding the target information/runs a nmap scan to find the OS of the target.
 targetIP = input("Please enter the IP of the target machine: ")
 print(Fore.WHITE)
 osInfo = str(subprocess.check_output(["nmap", "-O", targetIP]))
@@ -254,7 +254,7 @@ print(osInfo)
 
 os = ""
 payload = ""
-
+#here we are using if/elif statements to generate the payload depending on what OS was found in the nmap scan.
 if osInfo.find("windows") != -1:
     print(Fore.GREEN)
     os = "windows"
