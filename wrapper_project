@@ -1,4 +1,4 @@
-I DONT THINK THIS IS THE RIGHT ONE -----> THE SECOND ONE IS A BETTER ONE ...STARTS AT LINE 28....Try to see our progress from start to finish.
+I DONT THINK THIS IS THE RIGHT ONE -----> THE SECOND ONE IS A BETTER ONE ...STARTS AT LINE 28....Observe our progress from start to finish.
 def msfvenomWrapper():
     # Get payload type
     payload_type = input("Please specify payload type (e.g. windows/meterpreter/bind_tcp): ")
