@@ -259,7 +259,8 @@ meterpreter> keyscan_stop
 meterpreter> screenshot ### and much more 
 
  
-##NOTE: Meterpreter is a Metasploit attack payload that provides an interactive shell to the attacker so they can explore the target machine and execute code.
+##NOTE: reference site: https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
+        Meterpreter is a Metasploit attack payload that provides an interactive shell to the attacker so they can explore the target machine and execute code.
         Meterpreter completely resides in the memory of the compromised system and write nothing to the disk (to try to avoid detection by a av). 
         It doesn't spawn any new process(to also try to avoid av detection) but instead inject(DLL injection) itself into the compromised process.
         It has an ability to migrate to other running processes easily.
