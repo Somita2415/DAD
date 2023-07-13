@@ -260,11 +260,19 @@ meterpreter> clearev #will clear system, application and security logs on a Wind
 meterpreter> screenshot ### and much more 
 
  
-##NOTE: reference site: https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
+##NOTE: reference and credit to: https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
         Meterpreter is a Metasploit attack payload that provides an interactive shell to the attacker so they can explore the target machine and execute code.
         Meterpreter completely resides in the memory of the compromised system and write nothing to the disk (to try to avoid detection by a av). 
         It doesn't spawn any new process(to also try to avoid av detection) but instead inject(DLL injection) itself into the compromised process.
         It has an ability to migrate to other running processes easily.
         By default, Meterpreter communicates over encrypted channel, which leaves a limited trace on the compromised system from a forensic perspective.
 
+##NOTE:also credit to: https://blog.spookysec.net/stage-v-stageless-1/
+       1.stageless payload contains everything you will need to get a reverse shell callback, That means the size of the file is much larger and the program is more complex 
+       compared to the staged. This payload can be caught by listening on a raw socket (you can create a listener in Netcat ie nc -lvp 1337).
+       2.stage payload has to beacon out to another device(the initial executable is generally called a "dropper") to receive  second "Stage" which contains a more full and complete program.
+       
+##NOTE The Metasploit developers came up with a naming scheme for their payloads, 
+       all stageless payloads will be in the platform/shell_type_protocol. 
+       If you are unsure about the payload type you’re using, you can execute the msfvenom --list-payloads command to see a brief description about all of the payloads msfvenom can offer
 
