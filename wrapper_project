@@ -171,9 +171,10 @@ print("[*] Exported payload successfully.")
 ====================================================================================================================================================================
 ====================================================================================================================================================================
 ====================================================================================================================================================================
-##copy the code into a file ie. nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py. Now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
-## then it will Nmap scan our target, (I would say this technique is better for spear-phishing since you need to know target ip address to be able to create the payload successful.) and then give you an executable payload
-## you can put that into a file , attach to a link then email it to your target and hoping they click on it , or if you wanna embed into a website, you can do so.
+## copy the code into a file ie. nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py. Now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
+## then it will Nmap scan our target, (I would say this technique is better for spear-phishing since you need to know target ip address to be able to create the payload successfully and more effective.) 
+## and then give you an executable payload.
+## you can put that into a file , attach to an email and send it to your target and hoping they click on it , or if you wanna embed into a website, you can do so.
 
 #!/usr/bin/python
 
