@@ -274,5 +274,10 @@ meterpreter> screenshot ### and much more
        
 ##NOTE The Metasploit developers came up with a naming scheme for their payloads, 
        all stageless payloads will be in the platform/shell_type_protocol. 
-       If you are unsure about the payload type you’re using, you can execute the msfvenom --list-payloads command to see a brief description about all of the payloads msfvenom can offer
+       If you are unsure about the payload type you’re using, you can execute the msfvenom --list-payloads command to see a brief description about all of the payloads msfvenom can offer.
+
+
+
+
+
 
