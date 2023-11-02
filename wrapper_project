@@ -171,7 +171,7 @@ print("[*] Exported payload successfully.")
 ====================================================================================================================================================================
 ====================================================================================================================================================================
 ====================================================================================================================================================================
-## copy the code into a file ie. nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py. Now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
+## copy the code into a file e.g., nano dad.py, and dont forget to chmod to make it executable chmod +x dad.py. Now that dad.py is executable , sudo ./dad.py to run it and it will prompt you to the questions
 ## then it will Nmap scan our target, (I would say this technique is better for spear-phishing since you need to know target ip address to be able to create the payload successfully and more effective.) 
 ## and then give you an executable payload.
 ## you can put that into a file , attach to an email and send it to your target and hoping they click on it , or if you wanna embed into a website, you can do so.
@@ -263,14 +263,14 @@ meterpreter> screenshot ### and much more
  
 ##NOTE: reference and credit to: https://www.offensive-security.com/metasploit-unleashed/meterpreter-basics/
         Meterpreter is a Metasploit attack payload that provides an interactive shell to the attacker so they can explore the target machine and execute code.
-        Meterpreter completely resides in the memory of the compromised system and write nothing to the disk (to try to avoid detection by a av). 
+        Meterpreter completely resides in the memory of the compromised system and write nothing to the disk (to try to avoid detection by an av). 
         It doesn't spawn any new process(to also try to avoid av detection) but instead inject(DLL injection) itself into the compromised process.
         It has an ability to migrate to other running processes easily.
         By default, Meterpreter communicates over encrypted channel, which leaves a limited trace on the compromised system from a forensic perspective.
 
 ##NOTE: also credit to: https://blog.spookysec.net/stage-v-stageless-1/
         1.stageless payload contains everything you will need to get a reverse shell callback, That means the size of the file is much larger and the program is more complex 
-        compared to the staged. This payload can be caught by listening on a raw socket (you can create a listener in Netcat ie nc -lvp 1337).
+        compared to the staged. This payload can be caught by listening on a raw socket (you can create a listener in Netcat using command like nc -lvp 1337).
         2.stage payload has to beacon out to another device(the initial executable is generally called a "dropper") to receive  second "Stage" which contains a more full and complete program.
        
 ##NOTE: The Metasploit developers came up with a naming scheme for their payloads, 
